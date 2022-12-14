@@ -23,6 +23,15 @@ pipeline{
                                      }
                 
                         }
+                stage('Code Quality Analysis'){
+                                  steps{
+                                      script{
+                                              withSonarQubeEnv(credentialsId: 'sonar') {
+                                              sh 'mvn clean package sonar:sonar'
+                                      }
+                                }
+                        }
+                }
                 stage ('Code Quality Gate status'){
                                    steps{
                                             script{
