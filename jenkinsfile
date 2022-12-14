@@ -7,7 +7,7 @@ pipeline{
              stage(Git Checkout){
              
                             Step{
-                                git branch: 'main', url: 'https://github.com/avidere/online'
+                                git branch: 'main', url: 'https://github.com/avidere/online.git'
                                 }
                          }
               stage(Unit Testing){
