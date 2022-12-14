@@ -2,18 +2,20 @@ pipeline{
 
         agent any
         
-        Stages{
+        stages {
         
-             stage(Git Checkout){
+             stage(Git Checkout) {
              
-                            Step{
-                                git branch: 'main', url: 'https://github.com/avidere/online.git'
-                                }
+                                   steps {
+                                         script{
+                                                git branch: 'main', url: 'https://github.com/avidere/online.git'
+                                            }
+                                   }
                          }
-              stage(Unit Testing){
-                            step{
-                                sh' mvn test'
-                            }
+              stage(Unit Testing) {
+                                   steps{
+                                          sh' mvn test'
+                                  }
                         }          
              }
 }
