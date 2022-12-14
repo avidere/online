@@ -16,7 +16,13 @@ pipeline{
                                    steps{
                                           sh' mvn test'
                                   }
-                        }          
+                        }    
+                stage('Maven Build') {
+                                   steps{
+                                          sh'mvn package'
+                                     }
+                
+                        }
              }
 }
 
