@@ -8,7 +8,7 @@ pipeline{
              
                                    steps {
                                          script{
-                                                git branch: 'main', url: 'https://github.com/avidere/online.git'
+                                                git branch: 'demo', url: 'https://github.com/avidere/online.git'
                                             }
                                    }
                          }
