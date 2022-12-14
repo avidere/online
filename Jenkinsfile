@@ -4,7 +4,7 @@ pipeline{
         
         stages {
         
-             stage(Git Checkout) {
+             stage('Git Checkout') {
              
                                    steps {
                                          script{
@@ -12,10 +12,40 @@ pipeline{
                                             }
                                    }
                          }
-              stage(Unit Testing) {
+              stage('Unit Testing') {
                                    steps{
                                           sh' mvn test'
                                   }
                         }          
              }
 }
+
+/*
+
+pipeline{
+    
+    agent any 
+    
+    stages {
+        
+        stage('Git Checkout'){
+            
+            steps{
+                
+                script{
+                    
+                    git branch: 'main', url: 'https://github.com/avidere/demo-counter-app.git'
+                }
+            }
+        }
+        stage('UNIT testing'){
+            
+            steps{
+                
+                script{
+                    
+                    sh 'mvn test'
+                }
+            }
+        }
+        */
