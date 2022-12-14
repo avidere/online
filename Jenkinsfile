@@ -23,9 +23,9 @@ pipeline{
                                      }
                 
                         }
-                stage ('Code Quality Analysis'){
+                stage ('Code Quality Gate status'){
                                    steps{
-                                            scripts{
+                                            script{
                                         
                                                     waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
                                         
